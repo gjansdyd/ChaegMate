@@ -14,6 +14,7 @@
 		FD171A8A27FD56E400B97BCF /* DataModel+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD171A8927FD56E400B97BCF /* DataModel+UserDefaults.swift */; };
 		FD171A8C27FD579900B97BCF /* GoogleLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD171A8B27FD579900B97BCF /* GoogleLoginController.swift */; };
 		FD171A8E27FD5A4400B97BCF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD171A8D27FD5A4400B97BCF /* LoginController.swift */; };
+		FD171A9127FD693400B97BCF /* AppleLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD171A9027FD693400B97BCF /* AppleLoginController.swift */; };
 		FD73F25127FD3A2C00EBCA0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73F25027FD3A2C00EBCA0F /* AppDelegate.swift */; };
 		FD73F25327FD3A2C00EBCA0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73F25227FD3A2C00EBCA0F /* SceneDelegate.swift */; };
 		FD73F25527FD3A2C00EBCA0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73F25427FD3A2C00EBCA0F /* LoginViewController.swift */; };
@@ -33,6 +34,8 @@
 		FD171A8927FD56E400B97BCF /* DataModel+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataModel+UserDefaults.swift"; sourceTree = "<group>"; };
 		FD171A8B27FD579900B97BCF /* GoogleLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginController.swift; sourceTree = "<group>"; };
 		FD171A8D27FD5A4400B97BCF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FD171A8F27FD682500B97BCF /* ChaegMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChaegMate.entitlements; sourceTree = "<group>"; };
+		FD171A9027FD693400B97BCF /* AppleLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginController.swift; sourceTree = "<group>"; };
 		FD73F24D27FD3A2C00EBCA0F /* ChaegMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaegMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD73F25027FD3A2C00EBCA0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD73F25227FD3A2C00EBCA0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		FD73F24F27FD3A2C00EBCA0F /* ChaegMate */ = {
 			isa = PBXGroup;
 			children = (
+				FD171A8F27FD682500B97BCF /* ChaegMate.entitlements */,
 				FD73F26727FD3A7B00EBCA0F /* Launch */,
 				FD73F26827FD3A8A00EBCA0F /* Main */,
 				FD73F26927FD3A9300EBCA0F /* Util */,
@@ -156,6 +160,7 @@
 			children = (
 				FD171A8D27FD5A4400B97BCF /* LoginController.swift */,
 				FD171A8B27FD579900B97BCF /* GoogleLoginController.swift */,
+				FD171A9027FD693400B97BCF /* AppleLoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				FD171A8A27FD56E400B97BCF /* DataModel+UserDefaults.swift in Sources */,
 				FD171A8527FD547500B97BCF /* DataModel+Enum.swift in Sources */,
 				FD171A8C27FD579900B97BCF /* GoogleLoginController.swift in Sources */,
+				FD171A9127FD693400B97BCF /* AppleLoginController.swift in Sources */,
 				FD73F25527FD3A2C00EBCA0F /* LoginViewController.swift in Sources */,
 				FD171A8727FD54DF00B97BCF /* Extension+UI.swift in Sources */,
 				FD73F25B27FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld in Sources */,
@@ -448,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChaegMate/ChaegMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4UY2M9TWUY;
@@ -477,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChaegMate/ChaegMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4UY2M9TWUY;
