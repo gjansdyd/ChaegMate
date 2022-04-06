@@ -2,19 +2,19 @@
 //  AppDelegate.swift
 //  ChaegMate
 //
-//  Created by linkshops on 2022/04/06.
+//  Created by munyong on 2022/04/06.
 //
 
 import UIKit
 import CoreData
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        GIDSignIn.sharedInstance().clientID = "141986173384-k52lgqtlsenqmau4r26p459ni5qqo7ui.apps.googleusercontent.com"
+
         return true
     }
 

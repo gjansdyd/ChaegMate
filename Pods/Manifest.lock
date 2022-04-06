@@ -1,0 +1,35 @@
+PODS:
+  - AppAuth (1.5.0):
+    - AppAuth/Core (= 1.5.0)
+    - AppAuth/ExternalUserAgent (= 1.5.0)
+  - AppAuth/Core (1.5.0)
+  - AppAuth/ExternalUserAgent (1.5.0):
+    - AppAuth/Core
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.2.3):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - GTMSessionFetcher/Core (1.7.1)
+
+DEPENDENCIES:
+  - GoogleSignIn (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - AppAuth
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
+
+SPEC CHECKSUMS:
+  AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
+  GTMAppAuth: 987526d41b07efb1bedda5e936fe0cb718a03113
+  GTMSessionFetcher: 4577a4cc914a5a07c40a8a0ad0acc22080418c2d
+
+PODFILE CHECKSUM: 91d026bd1a7572688415c1fee16ef2dd09c63571
+
+COCOAPODS: 1.11.2
