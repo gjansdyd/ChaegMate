@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: scene)
         let sb = UIStoryboard(name: StoryBoard.main.identifier, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: LoginViewController.identifier)
+        let vc = sb.instantiateViewController(withIdentifier: RootViewController.identifier)
         window?.rootViewController = vc
         if let activity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
             self.window?.userActivity = activity

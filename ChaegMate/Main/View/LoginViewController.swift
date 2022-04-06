@@ -9,18 +9,16 @@ import UIKit
 import GoogleSignIn
 import AuthenticationServices
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     @IBOutlet private weak var loginButtonsStackView: UIStackView!
-    var loginController: LoginController?
+    @IBOutlet private weak var noLoginBtnOutlet: UIButton!
+    @IBAction func noLoginBtnAction(_ sender: UIButton) { goToMain() }
+    private var loginController: LoginController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-    }
-    
-    func setUI() {
-        self.view.backgroundColor = Theme.background0.color
         setGoogleLoginButton()
         setAppleLoginButton()
+        setNoLoginButton()
     }
 }
 
@@ -30,8 +28,8 @@ extension LoginViewController {
         let googleLoginButton = UIButton()
         googleLoginButton.translatesAutoresizingMaskIntoConstraints = false
         setButton(button: googleLoginButton,
-                  title: "Google로 로그인", titleColor: Theme.black.color,
-                  back: Theme.white.color, imgName: "GoogleLogin")
+                  title: "Google로 로그인", titleColor: Theme.label5.color,
+                  back: Theme.label0.color, imgName: "GoogleLogin")
         self.loginButtonsStackView.addArrangedSubview(googleLoginButton)
     
         googleLoginButton.addAction(UIAction { _ in
@@ -53,10 +51,15 @@ extension LoginViewController {
         self.loginButtonsStackView.addArrangedSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         setButton(button: button, title: "Apple로 로그인",
-                  titleColor: Theme.white.color, back: Theme.black.color,
+                  titleColor: Theme.label0.color, back: Theme.label5.color,
                   imgName: "AppleLogin")
         button.addAction(action, for: .touchUpInside)
         self.loginController = appleLoginController
+    }
+    
+    private func setNoLoginButton(){
+        let attributedString = "로그인 없이 앱 시작".rangeSetUnderline(color: Theme.labelBlue.color, range: "로그인 없이 앱 시작")
+        noLoginBtnOutlet.titleLabel?.attributedText = attributedString
     }
     
     private func setButton(button: UIButton, title: String, titleColor: UIColor, back: UIColor, imgName: String) {
@@ -76,6 +79,21 @@ extension LoginViewController {
 
 extension LoginViewController: LoginProtocol {
     func after(_ value: AfterLogin, _ userInfo: LoginUserInfo?, _ errorPrint: String?) {
-        
+        switch value {
+        case .success:
+            UserData.loginId = userInfo?.userIdentifer ?? ""
+            UserData.loginToken = userInfo?.token ?? ""
+            
+            DispatchQueue.main.async { self.goToMain() }
+        case .fail:
+            DispatchQueue.main.async { self.showAlertView(errorPrint ?? "") }
+        }
+    }
+    
+    private func showAlertView(_ errMsg: String) {
+        let alertVC = UIAlertController(title: "로그인 오류", message: "로그인에 실패하였습니다.\n\(errMsg)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true)
     }
 }

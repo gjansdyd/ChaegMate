@@ -14,24 +14,21 @@ enum StoryBoard: String {
 }
 
 enum Theme {
-    case white
-    case black
     case background0
 //    case background1
 //    case background2
 //    case background3
     
     case label0
-//    case label1
-//    case label2
-//    case label3
+    case label1
+    case label2
+    case label3
+    case label4
+    case label5
+    case labelBlue
     
     var color: UIColor {
         switch self {
-        case .white:
-            return UIColor(rgb: 0xFFFFFF)
-        case .black:
-            return UIColor(rgb: 0x000000)
         case .background0:
             return UIColor(rgb: 0x333333)
 //        case .background1:
@@ -41,13 +38,19 @@ enum Theme {
 //        case .background3:
 //            <#code#>
         case .label0:
-            return UIColor(rgb: 0x99cc66)
-//        case .label1:
-//            <#code#>
-//        case .label2:
-//            <#code#>
-//        case .label3:
-//            <#code#>
+            return UIColor(rgb: 0xFFFFFF)
+        case .label1:
+            return UIColor(rgb: 0xEEFFB7)
+        case .label2:
+            return UIColor(rgb: 0x99CC66)
+        case .label3:
+            return UIColor(rgb: 0x497B18)
+        case .label4:
+            return UIColor(rgb: 0x003300)
+        case .label5:
+            return UIColor(rgb: 0x000000)
+        case .labelBlue:
+            return UIColor.systemBlue
         }
     }
 }
