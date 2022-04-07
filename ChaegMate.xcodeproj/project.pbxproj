@@ -25,6 +25,9 @@
 		FD73F25B27FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD73F25927FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld */; };
 		FD73F25D27FD3A2E00EBCA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD73F25C27FD3A2E00EBCA0F /* Assets.xcassets */; };
 		FD73F26027FD3A2E00EBCA0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD73F25E27FD3A2E00EBCA0F /* LaunchScreen.storyboard */; };
+		FDCCE24827FEBA7000D3FDE0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE24727FEBA7000D3FDE0 /* MyPage.storyboard */; };
+		FDCCE24A27FEBA8200D3FDE0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE24927FEBA8200D3FDE0 /* MyPageViewController.swift */; };
+		FDCCE24D27FEBB3E00D3FDE0 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE24C27FEBB3E00D3FDE0 /* Start.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		FD73F25C27FD3A2E00EBCA0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD73F25F27FD3A2E00EBCA0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD73F26127FD3A2E00EBCA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDCCE24727FEBA7000D3FDE0 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		FDCCE24927FEBA8200D3FDE0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		FDCCE24C27FEBB3E00D3FDE0 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				FD171A8F27FD682500B97BCF /* ChaegMate.entitlements */,
 				FD73F26727FD3A7B00EBCA0F /* Launch */,
 				FD73F26827FD3A8A00EBCA0F /* Main */,
+				FDCCE24427FEBA4A00D3FDE0 /* MyPage */,
 				FD73F26927FD3A9300EBCA0F /* Util */,
 				FD73F25927FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld */,
 				FD73F26127FD3A2E00EBCA0F /* Info.plist */,
@@ -126,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FD73F25E27FD3A2E00EBCA0F /* LaunchScreen.storyboard */,
+				FDCCE24B27FEBB2D00D3FDE0 /* Start */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -157,14 +165,63 @@
 			children = (
 				FD73F25627FD3A2C00EBCA0F /* Main.storyboard */,
 				FD171A9627FD81B600B97BCF /* BaseViewController.swift */,
-				FD171A8227FD544900B97BCF /* RootViewController.swift */,
-				FD73F25427FD3A2C00EBCA0F /* LoginViewController.swift */,
 				FD171A9427FD7E0A00B97BCF /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
 		FD73F26B27FD3AC600EBCA0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDCCE24427FEBA4A00D3FDE0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE24527FEBA5600D3FDE0 /* View */,
+				FDCCE24627FEBA6300D3FDE0 /* Controller */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		FDCCE24527FEBA5600D3FDE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE24727FEBA7000D3FDE0 /* MyPage.storyboard */,
+				FDCCE24927FEBA8200D3FDE0 /* MyPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCCE24627FEBA6300D3FDE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDCCE24B27FEBB2D00D3FDE0 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE24E27FECBEE00D3FDE0 /* View */,
+				FDCCE24F27FECBFA00D3FDE0 /* Controller */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		FDCCE24E27FECBEE00D3FDE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE24C27FEBB3E00D3FDE0 /* Start.storyboard */,
+				FD171A8227FD544900B97BCF /* RootViewController.swift */,
+				FD73F25427FD3A2C00EBCA0F /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCCE24F27FECBFA00D3FDE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FD171A8D27FD5A4400B97BCF /* LoginController.swift */,
@@ -237,7 +294,9 @@
 			files = (
 				FD73F26027FD3A2E00EBCA0F /* LaunchScreen.storyboard in Resources */,
 				FD73F25D27FD3A2E00EBCA0F /* Assets.xcassets in Resources */,
+				FDCCE24D27FEBB3E00D3FDE0 /* Start.storyboard in Resources */,
 				FD73F25827FD3A2C00EBCA0F /* Main.storyboard in Resources */,
+				FDCCE24827FEBA7000D3FDE0 /* MyPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +376,7 @@
 				FD73F25527FD3A2C00EBCA0F /* LoginViewController.swift in Sources */,
 				FD171A8727FD54DF00B97BCF /* Extension+UI.swift in Sources */,
 				FD73F25B27FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld in Sources */,
+				FDCCE24A27FEBA8200D3FDE0 /* MyPageViewController.swift in Sources */,
 				FD171A8327FD544900B97BCF /* RootViewController.swift in Sources */,
 				FD73F25127FD3A2C00EBCA0F /* AppDelegate.swift in Sources */,
 				FD73F25327FD3A2C00EBCA0F /* SceneDelegate.swift in Sources */,

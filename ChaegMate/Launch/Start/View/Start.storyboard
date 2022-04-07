@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uOl-ak-jaH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--RootViewController-->
+        <scene sceneID="W9o-ey-a99">
+            <objects>
+                <viewController storyboardIdentifier="RootViewController" title="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uOl-ak-jaH" customClass="RootViewController" customModule="ChaegMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WmB-Kw-Ofl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DOe-uI-6lQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uD8-re-fF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207" y="94"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="ikH-Dn-Enp">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WhQ-7B-qLU" customClass="LoginViewController" customModule="ChaegMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SY9-3A-rdR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tqg-ma-tRo">
+                                <rect key="frame" x="55" y="707" width="304" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9o4-vq-iUB"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED5-de-qj0">
+                                <rect key="frame" x="173.5" y="815" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="noLoginBtnAction:" destination="WhQ-7B-qLU" eventType="touchUpInside" id="LNU-ab-xDF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="35h-h1-p1B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="35h-h1-p1B" firstAttribute="bottom" secondItem="tqg-ma-tRo" secondAttribute="bottom" constant="55" id="3nc-tK-WZf"/>
+                            <constraint firstItem="35h-h1-p1B" firstAttribute="trailing" secondItem="tqg-ma-tRo" secondAttribute="trailing" constant="55" id="WaU-8a-S7g"/>
+                            <constraint firstItem="tqg-ma-tRo" firstAttribute="leading" secondItem="35h-h1-p1B" secondAttribute="leading" constant="55" id="j6L-Qn-mfa"/>
+                            <constraint firstItem="ED5-de-qj0" firstAttribute="centerX" secondItem="SY9-3A-rdR" secondAttribute="centerX" id="pIV-c6-iV6"/>
+                            <constraint firstItem="ED5-de-qj0" firstAttribute="top" secondItem="tqg-ma-tRo" secondAttribute="bottom" constant="8" id="z0b-Bf-3hD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButtonsStackView" destination="tqg-ma-tRo" id="nvR-RF-cxw"/>
+                        <outlet property="noLoginBtnOutlet" destination="ED5-de-qj0" id="MAL-up-dYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-5T-eNw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

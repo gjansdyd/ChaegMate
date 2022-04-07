@@ -22,7 +22,7 @@ class RootViewController: BaseViewController{
     }
     
     private func goToLoginVC() {
-        guard let vc = UIStoryboard(name: StoryBoard.main.identifier, bundle: nil)
+        guard let vc = UIStoryboard(name: StoryBoard.start.identifier, bundle: nil)
                         .instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         else { return }
         vc.modalPresentationStyle = .fullScreen

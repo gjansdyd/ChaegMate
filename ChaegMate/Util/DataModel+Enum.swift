@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 enum StoryBoard: String {
+    case start = "Start"
     case main = "Main"
+    case myPage = "MyPage"
     var identifier: String { return self.rawValue }
 }
 

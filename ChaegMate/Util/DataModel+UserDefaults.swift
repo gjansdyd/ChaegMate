@@ -17,4 +17,9 @@ class UserData {
         get { return UserDefaults.standard.string(forKey: "LoginToken") ?? "" }
         set(val) { UserDefaults.standard.setValue(val, forKey: "LoginToken") }
     }
+    
+    static var isLeftHandType : Bool {
+        get { return UserDefaults.standard.bool(forKey: "IsLeftHandType") ?? false }
+        set(val) { UserDefaults.standard.set(val, forKey: "IsLeftHandType") }
+    }
 }

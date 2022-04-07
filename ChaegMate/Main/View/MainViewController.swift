@@ -11,14 +11,26 @@ import UIKit
 class MainViewController: BaseViewController {
     @IBOutlet private weak var topView: UIView!
     @IBOutlet private weak var contentView: UIView!
+    private weak var floationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         contentView.backgroundColor = .clear
         setTopView()
+        setFloatingButton()
     }
     
+    private func goToMyPage() -> UIAction? {
+        guard let vc = UIStoryboard(name: StoryBoard.myPage.identifier, bundle: nil)
+                        .instantiateViewController(withIdentifier: MyPageViewController.identifier)
+                as? MyPageViewController else { return nil }
+        return UIAction { _ in self.present(vc, animated: true) }
+    }
+}
+
+//MARK: UI Set
+extension MainViewController {
     private func setTopView() {
         topView.backgroundColor = .clear
         
@@ -63,10 +75,23 @@ class MainViewController: BaseViewController {
         myPageButton.addAction(action, for: .touchUpInside)
     }
     
-    private func goToMyPage() -> UIAction? {
-        let vc = UIStoryboard(name: StoryBoard.main.identifier, bundle: nil).instantiateViewController(withIdentifier: "MyPageViewController")
-//        guard  else { return nil }
-        return UIAction { _ in self.present(vc, animated: true) }
+    private func setFloatingButton() {
+        let button = UIButton()
+        self.view.addSubviews(button)
+        button.backgroundColor = .green
+        
+        let layoutConstraint: NSLayoutConstraint
+        if UserData.isLeftHandType {
+            layoutConstraint = button.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 50)
+        } else {
+            layoutConstraint = button.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -50)
+        }
+        NSLayoutConstraint.activate([
+            layoutConstraint,
+            button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            button.widthAnchor.constraint(equalToConstant: 66),
+            button.heightAnchor.constraint(equalToConstant: 66),
+        ])
+        self.floationButton = button
     }
 }
-

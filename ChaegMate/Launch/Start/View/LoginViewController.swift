@@ -84,10 +84,25 @@ extension LoginViewController: LoginProtocol {
             UserData.loginId = userInfo?.userIdentifer ?? ""
             UserData.loginToken = userInfo?.token ?? ""
             
-            DispatchQueue.main.async { self.goToMain() }
+            DispatchQueue.main.async { self.chooseHandType() }
         case .fail:
             DispatchQueue.main.async { self.showAlertView(errorPrint ?? "") }
         }
+    }
+    
+    private func chooseHandType() {
+        let alertVC = UIAlertController(title: "손잡이 확인", message: "당신은 왼손잡이인가요? 오른손잡이인가요?", preferredStyle: .alert)
+        let leftBtn = UIAlertAction(title: "왼손", style: .default) { _ in
+            UserData.isLeftHandType = true
+            self.goToMain()
+        }
+        let rightBtn = UIAlertAction(title: "오른손", style: .default) { _ in
+            UserData.isLeftHandType = false
+            self.goToMain()
+        }
+        alertVC.addAction(leftBtn)
+        alertVC.addAction(rightBtn)
+        present(alertVC, animated: true)
     }
     
     private func showAlertView(_ errMsg: String) {
