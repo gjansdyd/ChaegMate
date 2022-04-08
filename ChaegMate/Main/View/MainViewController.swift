@@ -11,7 +11,10 @@ import UIKit
 class MainViewController: BaseViewController {
     @IBOutlet private weak var topView: UIView!
     @IBOutlet private weak var contentView: UIView!
-    private weak var floationButton: UIButton!
+    private weak var floatingButton: UIButton!
+    private weak var back: UIView?
+    private weak var overlappedButtonsView: OverlappedButtonsView!
+    private weak var overlappedButtonsViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,8 @@ class MainViewController: BaseViewController {
         contentView.backgroundColor = .clear
         setTopView()
         setFloatingButton()
+        setOverlappedButtonsView()
+        setGestureRecognizer()
     }
     
     private func goToMyPage() -> UIAction? {
@@ -78,7 +83,6 @@ extension MainViewController {
     private func setFloatingButton() {
         let button = UIButton()
         self.view.addSubviews(button)
-        button.backgroundColor = .green
         
         let layoutConstraint: NSLayoutConstraint
         if UserData.isLeftHandType {
@@ -86,12 +90,65 @@ extension MainViewController {
         } else {
             layoutConstraint = button.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -50)
         }
+        
         NSLayoutConstraint.activate([
             layoutConstraint,
             button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            button.widthAnchor.constraint(equalToConstant: 66),
-            button.heightAnchor.constraint(equalToConstant: 66),
+            button.widthAnchor.constraint(equalToConstant: 42),
+            button.heightAnchor.constraint(equalToConstant: 42),
         ])
-        self.floationButton = button
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 21
+        button.addAction(UIAction { _ in self.showButtonDetails() }, for: .touchUpInside)
+        self.floatingButton = button
+    }
+    
+    private func setOverlappedButtonsView() {
+        if back == nil { back = self.view.setBackgroundView() }
+        guard let back = back else { return }
+        
+        let overlappedButtonsView = OverlappedButtonsView()
+        back.addSubviews(overlappedButtonsView)
+        
+        let heightConstraint = overlappedButtonsView.heightAnchor.constraint(equalToConstant: 50)
+        NSLayoutConstraint.activate([
+            overlappedButtonsView.centerXAnchor.constraint(equalTo: self.floatingButton.centerXAnchor),
+            overlappedButtonsView.bottomAnchor.constraint(equalTo: back.bottomAnchor, constant: -50),
+            heightConstraint,
+        ])
+        
+        overlappedButtonsView.isHidden = true
+        self.overlappedButtonsView = overlappedButtonsView
+        self.overlappedButtonsViewHeightConstraint = heightConstraint
+    }
+}
+
+extension MainViewController: UIGestureRecognizerDelegate {
+    private func setGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hiddenButtonsView))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    private func showButtonDetails() {
+        if let back = back { back.isHidden = false }
+        self.overlappedButtonsView.isHidden = false
+        overlappedButtonsView.updateUI(isHidden: false)
+        overlappedButtonsViewHeightConstraint.isActive = false
+        overlappedButtonsViewHeightConstraint = overlappedButtonsView.heightAnchor.constraint(equalToConstant: 150)
+        overlappedButtonsViewHeightConstraint.isActive = true
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc
+    private func hiddenButtonsView() {
+        overlappedButtonsView.updateUI(isHidden: true) { [weak self] in
+            self?.overlappedButtonsViewHeightConstraint.isActive = false
+            self?.overlappedButtonsViewHeightConstraint = self?.overlappedButtonsView.heightAnchor.constraint(equalToConstant: 50)
+            self?.overlappedButtonsViewHeightConstraint.isActive = true
+            self?.overlappedButtonsView.isHidden = true
+            self?.back?.isHidden = true
+        }
     }
 }

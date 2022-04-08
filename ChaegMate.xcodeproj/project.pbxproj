@@ -28,6 +28,7 @@
 		FDCCE24827FEBA7000D3FDE0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE24727FEBA7000D3FDE0 /* MyPage.storyboard */; };
 		FDCCE24A27FEBA8200D3FDE0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE24927FEBA8200D3FDE0 /* MyPageViewController.swift */; };
 		FDCCE24D27FEBB3E00D3FDE0 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE24C27FEBB3E00D3FDE0 /* Start.storyboard */; };
+		FDCCE25227FEE75E00D3FDE0 /* OverlappedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE25127FEE75E00D3FDE0 /* OverlappedButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		FDCCE24727FEBA7000D3FDE0 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		FDCCE24927FEBA8200D3FDE0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FDCCE24C27FEBB3E00D3FDE0 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		FDCCE25127FEE75E00D3FDE0 /* OverlappedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				FD73F26727FD3A7B00EBCA0F /* Launch */,
 				FD73F26827FD3A8A00EBCA0F /* Main */,
 				FDCCE24427FEBA4A00D3FDE0 /* MyPage */,
+				FDCCE25027FEE0E100D3FDE0 /* Extension */,
 				FD73F26927FD3A9300EBCA0F /* Util */,
 				FD73F25927FD3A2C00EBCA0F /* ChaegMate.xcdatamodeld */,
 				FD73F26127FD3A2E00EBCA0F /* Info.plist */,
@@ -152,10 +155,6 @@
 			children = (
 				FD171A8827FD54FD00B97BCF /* Delegate */,
 				FD73F25C27FD3A2E00EBCA0F /* Assets.xcassets */,
-				FD171A8927FD56E400B97BCF /* DataModel+UserDefaults.swift */,
-				FD171A8427FD547500B97BCF /* DataModel+Enum.swift */,
-				FD171A8627FD54DF00B97BCF /* Extension+UI.swift */,
-				FD171A9227FD7CAF00B97BCF /* Extension+Foundation.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				FD73F25627FD3A2C00EBCA0F /* Main.storyboard */,
+				FDCCE25127FEE75E00D3FDE0 /* OverlappedButtonsView.swift */,
 				FD171A9627FD81B600B97BCF /* BaseViewController.swift */,
 				FD171A9427FD7E0A00B97BCF /* MainViewController.swift */,
 			);
@@ -229,6 +229,17 @@
 				FD171A9027FD693400B97BCF /* AppleLoginController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDCCE25027FEE0E100D3FDE0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FD171A8927FD56E400B97BCF /* DataModel+UserDefaults.swift */,
+				FD171A8427FD547500B97BCF /* DataModel+Enum.swift */,
+				FD171A8627FD54DF00B97BCF /* Extension+UI.swift */,
+				FD171A9227FD7CAF00B97BCF /* Extension+Foundation.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 			files = (
 				FD171A8A27FD56E400B97BCF /* DataModel+UserDefaults.swift in Sources */,
 				FD171A9527FD7E0A00B97BCF /* MainViewController.swift in Sources */,
+				FDCCE25227FEE75E00D3FDE0 /* OverlappedButtonsView.swift in Sources */,
 				FD171A8527FD547500B97BCF /* DataModel+Enum.swift in Sources */,
 				FD171A8C27FD579900B97BCF /* GoogleLoginController.swift in Sources */,
 				FD171A9127FD693400B97BCF /* AppleLoginController.swift in Sources */,

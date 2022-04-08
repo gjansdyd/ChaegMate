@@ -45,4 +45,19 @@ extension UIView {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
+    
+    func setBackgroundView() -> UIView {
+        let view = UIView()
+        self.addSubviews(view)
+        NSLayoutConstraint.activate([
+            self.topAnchor.constraint(equalTo: view.topAnchor),
+            self.leftAnchor.constraint(equalTo: view.leftAnchor),
+            self.rightAnchor.constraint(equalTo: view.rightAnchor),
+            self.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        view.backgroundColor = .black.withAlphaComponent(0.5)
+        view.isHidden = true
+        return view
+    }
 }
